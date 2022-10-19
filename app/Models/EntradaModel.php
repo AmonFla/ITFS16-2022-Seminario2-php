@@ -36,6 +36,6 @@ class EntradaModel extends Model
 
     public function etiquetas()
     {
-        return $this->hasMany(EtiquetasModel::class);
+        return $this->belongsToMany(EtiquetasModel::class, 'entradas_etiquetas', 'entrada_id', 'etiqueta_id');
     }
 }

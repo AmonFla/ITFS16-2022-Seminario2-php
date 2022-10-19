@@ -18,4 +18,9 @@ class EtiquetaModel extends Model
     protected $fillable = [
         'nombre'
     ];
+
+    public function entradas()
+    {
+        return $this->belongsToMany(EntradasModel::class, 'entradas_etiquetas', 'etiqueta_id', 'entrada_id');
+    }
 }

@@ -21,8 +21,8 @@ class CategoriaModel extends Model
         'nombre'
     ];
 
-    public function etiqueta()
+    public function entradas()
     {
-        return $this->belongsTo(EntradaModel::class);
+        return $this->hasMany(EntradaModel::class);
     }
 }
