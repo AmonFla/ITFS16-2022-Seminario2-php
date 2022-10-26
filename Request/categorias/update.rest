@@ -1,0 +1,13 @@
+###
+GET http://localhost:8000/categorias/2
+
+###
+PUT http://localhost:8000/categorias/2
+Content-Type: application/json
+
+{
+  "nombre": "categoria Dos"
+}
+
+###
+GET http://localhost:8000/categorias/2

@@ -1,0 +1,4 @@
+GET http://localhost:8000/etiquetas
+
+###
+GET http://localhost:8000/etiquetas/1

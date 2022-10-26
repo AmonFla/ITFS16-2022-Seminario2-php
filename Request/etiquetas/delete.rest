@@ -1,0 +1,8 @@
+###
+GET http://localhost:8000/etiquetas
+
+###
+DELETE http://localhost:8000/etiquetas/1
+
+###
+GET http://localhost:8000/etiquetas
