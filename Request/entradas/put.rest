@@ -1,12 +1,22 @@
-PUT http://localhost:4000/entradas/18
+# @name login
+POST http://localhost:8000/login
 Content-Type: application/json
+
+{
+  "email" : "admin@admin.com",
+  "password" : "123456"
+}
+
+###
+PUT http://localhost:8000/entradas/21
+Content-Type: application/json
+Authorization: Bearer {{ login.response.body.token }}
 
 {
   "titulo":"primer postwew",
   "contenido" :"este es el contenidoewew",
   "fechaPub" : "2022-09-15",
   "categoria" : {
-    "id":1,
     "nombre" : "categoria"
   },
   "tags": [{
@@ -15,8 +25,8 @@ Content-Type: application/json
   },{
     "nombre": "nueva etiqueta232"
   }]
-  
+
 }
 
 ###
-GET http://localhost:4000/entradas/18
+GET http://localhost:8000/entradas/2

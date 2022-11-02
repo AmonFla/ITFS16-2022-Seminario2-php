@@ -1,0 +1,15 @@
+GET http://localhost:8000/entradas/2
+
+###
+# @name login
+POST http://localhost:8000/login
+Content-Type: application/json
+
+{
+  "email" : "admin33@admin.com",
+  "password" : "123456"
+}
+
+###
+DELETE http://localhost:8000/entradas/22
+Authorization: Bearer {{login.response.body.token}}

@@ -26,6 +26,18 @@ Route::controller(\App\Http\Controllers\Api\CategoriasController::class)->group(
     });
 });
 
+Route::controller(\App\Http\Controllers\Api\EntradasController::class)->group(function () {
+    Route::prefix('entradas')->group(function () {
+        Route::get('/', 'getAll');
+        Route::get('/{id}', 'getOne');
+        Route::middleware('auth:sanctum')->group(function () {
+            Route::delete('/{id}', 'delete');
+            Route::put('/{id}', 'update');
+            Route::post('/', 'save');
+        });
+    });
+});
+
 Route::prefix('etiquetas')->group(function () {
     Route::get('/', [\App\Http\Controllers\Api\EtiquetasController::class, 'getAll']);
     Route::get('/{tagid}', [\App\Http\Controllers\Api\EtiquetasController::class, 'getOne']);

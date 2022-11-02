@@ -21,7 +21,9 @@ class EntradaModel extends Model
     protected $fillable = [
         'titulo',
         'contenido',
-        'fecha_pub'
+        'fecha_pub',
+        'user_id',
+        'categoria_id'
     ];
 
     public function user()
@@ -31,11 +33,11 @@ class EntradaModel extends Model
 
     public function categorias()
     {
-        return $this->belongsTo(CategoriaModel::class);
+        return $this->belongsTo(CategoriaModel::class, 'categoria_id', 'id');
     }
 
     public function etiquetas()
     {
-        return $this->belongsToMany(EtiquetasModel::class, 'entradas_etiquetas', 'entrada_id', 'etiqueta_id');
+        return $this->belongsToMany(EtiquetaModel::class, 'entradas_etiquetas', 'entrada_id', 'etiqueta_id');
     }
 }
