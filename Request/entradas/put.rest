@@ -8,7 +8,7 @@ Content-Type: application/json
 }
 
 ###
-PUT http://localhost:8000/entradas/21
+PUT http://localhost:8000/entradas/22
 Content-Type: application/json
 Authorization: Bearer {{ login.response.body.token }}
 
